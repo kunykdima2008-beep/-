@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #05050a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-container {
+    width: 100%;
+    max-width: 500px;
+    background: #090a14;
+    border: 2px solid #2a8d8c;
+    box-shadow: 0 0 20px rgba(42, 141, 140, 0.4), inset 0 0 15px rgba(42, 141, 140, 0.2);
+    border-radius: 8px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.input-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.question-input {
+    width: 85%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 1px solid #b8a3e0;
+    background: #eadaf7;
+    color: #1a0933;
+    font-size: 1.1rem;
+    text-align: center;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.question-input:focus {
+    box-shadow: 0 0 15px rgba(218, 180, 252, 0.8);
+    background: #f3e9fc;
+}
+
+.error-message {
+    color: #ff5555;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    height: 20px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error-message.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.ball-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 50% 50%, #d896ff 0%, #8b4fb3 30%, #2e124d 60%, #0d041a 90%);
+    box-shadow: 
+        0 0 30px rgba(186, 104, 200, 0.5),
+        inset 0 0 25px rgba(0, 0, 0, 0.9),
+        inset -10px -10px 20px rgba(0, 0, 0, 0.8),
+        inset 10px 10px 20px rgba(255, 255, 255, 0.4);
+    user-select: none;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.ball-container:hover {
+    transform: scale(1.02);
+    box-shadow: 
+        0 0 40px rgba(218, 138, 232, 0.7),
+        inset 0 0 25px rgba(0, 0, 0, 0.9),
+        inset -10px -10px 20px rgba(0, 0, 0, 0.8),
+        inset 10px 10px 20px rgba(255, 255, 255, 0.5);
+}
+
+.ball-container::before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    width: 70%;
+    height: 35%;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+}
+
+.answer-text {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 
+        0 0 10px #ffffff,
+        0 0 20px #e040fb,
+        0 0 30px #e040fb;
+    text-align: center;
+    padding: 0 15px;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+@keyframes shake {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    20% { transform: translate(-10px, 5px) rotate(-5deg); }
+    40% { transform: translate(10px, -5px) rotate(5deg); }
+    60% { transform: translate(-10px, -5px) rotate(-3deg); }
+    80% { transform: translate(10px, 5px) rotate(3deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.shaking {
+    animation: shake 0.5s ease-in-out;
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        padding: 20px 10px;
+    }
+    .ball-container {
+        width: 220px;
+        height: 220px;
+    }
+    .answer-text {
+        font-size: 1.5rem;
+    }
+    .question-input {
+        width: 95%;
+        font-size: 1rem;
+    }
+}

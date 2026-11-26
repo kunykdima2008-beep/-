@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №9 — Гра «21»</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Лабораторна робота № 9</h1>
+        <div class="subtitle">Гра «21» — Користувач vs Комп'ютер</div>
+
+        <div class="game-board">
+            <div class="player-box">
+                <div class="player-name" id="user-name-label">User</div>
+                <div class="score-badge" id="user-score">0</div>
+            </div>
+
+            <div class="center-controls">
+                <div class="attempt-info" id="attempt-label">Спроба 0 з 3</div>
+                <button class="btn-generate" id="btn-generate">Generate</button>
+            </div>
+
+            <div class="player-box">
+                <div class="player-name">Computer</div>
+                <div class="score-badge" id="computer-score">0</div>
+            </div>
+        </div>
+
+        <div class="cards-display">
+            <div class="card black" id="user-card" style="visibility: hidden;">
+                <div class="card-corner top-left">
+                    <span class="card-value">?</span>
+                    <span class="card-suit">♠</span>
+                </div>
+                <div class="card-center card-suit">♠</div>
+                <div class="card-corner bottom-right">
+                    <span class="card-value">?</span>
+                    <span class="card-suit">♠</span>
+                </div>
+            </div>
+
+            <div class="card red" id="computer-card" style="visibility: hidden;">
+                <div class="card-corner top-left">
+                    <span class="card-value">?</span>
+                    <span class="card-suit">♥</span>
+                </div>
+                <div class="card-center card-suit">♥</div>
+                <div class="card-corner bottom-right">
+                    <span class="card-value">?</span>
+                    <span class="card-suit">♥</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-message" id="result-message"></div>
+        <button class="btn-reset" id="btn-reset" onclick="location.reload()">Зіграти ще раз</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

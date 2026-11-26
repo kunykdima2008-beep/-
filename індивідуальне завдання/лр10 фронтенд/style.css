@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.slot-machine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+}
+
+#user-name {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.attempts {
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+#generate-btn {
+    background-color: #00ff00;
+    color: #000;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 12px 35px;
+    border: 2px solid #00cc00;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#generate-btn:hover {
+    background-color: #00e600;
+}
+
+#generate-btn:active {
+    transform: scale(0.97);
+}
+
+#generate-btn:disabled {
+    background-color: #ccc;
+    border-color: #aaa;
+    cursor: not-allowed;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    background-color: #333366;
+    padding: 10px;
+    border: 4px solid #1a1a3a;
+    border-radius: 8px;
+    width: 100%;
+    aspect-ratio: 1; /* Сохраняет квадратную форму */
+}
+
+.cell {
+    background-color: #7b84cc;
+    border: 2px solid #2a2a55;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    user-select: none;
+    overflow: hidden;
+}
+
+.cell img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.message.win {
+    color: #2e7d32;
+}
+
+.message.lose {
+    color: #c62828;
+}
+
+@media (max-width: 480px) {
+    .slot-machine {
+        padding: 15px;
+    }
+
+    #user-name {
+        font-size: 24px;
+    }
+
+    .attempts {
+        font-size: 18px;
+    }
+
+    #generate-btn {
+        font-size: 18px;
+        padding: 10px 25px;
+    }
+
+    .cell {
+        font-size: 38px;
+    }
+}

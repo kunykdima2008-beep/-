@@ -1,0 +1,60 @@
+:root {
+  --card-radius: 0.75rem;
+  --accent-color: #0d6efd;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+section[id] {
+  scroll-margin-top: 76px;
+}
+
+.portal-header {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.lab-item .card,
+.form-card {
+  border-radius: var(--card-radius);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lab-item .card-title {
+  color: #111827;
+}
+
+.lab-item .btn {
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+@media (hover: hover) {
+  .lab-item .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.65rem 1.25rem rgba(13, 110, 253, 0.12) !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .portal-header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .card-body {
+    padding: 1rem;
+  }
+
+  .d-flex.flex-wrap.gap-2 .btn {
+    width: 100%;
+  }
+}
